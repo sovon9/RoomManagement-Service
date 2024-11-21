@@ -52,10 +52,10 @@ public class RoomController {
 		
 	}
 	
-	@GetMapping("/getAllAvailableRooms")
-	public ResponseEntity<List<Room>> getAllAvailableRooms()
+	@GetMapping("/getAllAvailableRooms/roomStatus/{roomStatus}")
+	public ResponseEntity<List<Room>> getAllAvailableRooms(@PathVariable("roomStatus") String roomStatus)
 	{
-		return new ResponseEntity<>(roomService.getAllRoomDetails(), HttpStatus.OK);
+		return new ResponseEntity<>(roomService.getAllVCRoomDetails(roomStatus), HttpStatus.OK);
 	}
 	
 }

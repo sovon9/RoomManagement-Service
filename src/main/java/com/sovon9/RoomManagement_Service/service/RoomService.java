@@ -30,4 +30,9 @@ public class RoomService {
 		return repository.findAll();
 	}
 	
+	public List<Room> getAllVCRoomDetails(String status)
+	{
+		return repository.findByRoomStatus(status);
+	}
+	
 }
